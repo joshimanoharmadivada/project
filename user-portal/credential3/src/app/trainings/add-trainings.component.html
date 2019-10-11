@@ -1,0 +1,86 @@
+<head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      </head>
+      <body style="background-image: url('./assets/a1.jpg'); height: 1200px; background-repeat: no-repeat; ">
+<div class="col-md-6" style="margin-left: 300px;">
+  <h2 class="text-center">Add Trainings Details</h2>
+<form>
+  <div class="form-group">
+    <label for="id">Training Id</label>
+    <input type="text" [(ngModel)]="trainings.id" placeholder="Trainings Id" name="id" class="form-control" id="id">
+  </div>
+
+  <div class="form-group">
+      <label for="status">Status</label>
+      <input type="text" [(ngModel)]="trainings.status" placeholder="Status" name="status" class="form-control" id="status">
+    </div>
+
+    <div class="form-group">
+        <label for="progress">Progress</label>
+        <input type="text" [(ngModel)]="trainings.progress" placeholder="Progress" name="progress" class="form-control" id="progress">
+      </div>
+
+      <div class="form-group">
+          <label for="camnt">Commission</label>
+          <input type="text" [(ngModel)]="trainings.commissionAmount" placeholder="Commission" name="camnt" class="form-control" id="camnt">
+        </div>
+
+        <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="text" [(ngModel)]="trainings.rating" placeholder="Rating" name="rating" class="form-control" id="rating">
+          </div>
+
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="text" [(ngModel)]="trainings.startDate" placeholder="Start Date" name="startDate" class="form-control" id="startDate">
+    </div>
+
+    <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="text" [(ngModel)]="trainings.endDate" placeholder="End Date" name="endDate" class="form-control" id="endDate">
+    </div>
+
+    <div class="form-group">
+        <label for="startTime">Start Time</label>
+        <input type="text" [(ngModel)]="trainings.startTime" placeholder="Start Time" name="startTime" class="form-control" id="startTime">
+    </div>
+
+    <div class="form-group">
+        <label for="endTime">End Time</label>
+        <input type="text" [(ngModel)]="trainings.endTime" placeholder="End Time" name="endTime" class="form-control" id="endTime">
+    </div>
+
+    <div class="form-group">
+        <label for="amnt">Amount Received</label>
+        <input type="text" [(ngModel)]="trainings.amountReceived" placeholder="Amount" name="amnt" class="form-control" id="amnt">
+    </div>
+
+   
+    <div class="form-group">
+        <label for="mid">Mentor Id</label>
+        <input type="text" [(ngModel)]="trainings.mentor.mentorId" placeholder="Mentor Id" name="mid" class="form-control" id="mid">
+    </div>
+
+   
+
+    
+    <div class="form-group">
+            <label for="tid">Technology Id</label>
+            <input type="text" [(ngModel)]="trainings.technologies.techid" placeholder="Technology Id" name="tid" class="form-control" id="tid">
+        </div>
+    <div class="form-group">
+        <label for="fees">Fees</label>
+        <input type="text" [(ngModel)]="trainings.fees" placeholder="Fees" name="fees" class="form-control" id="fees">
+    </div>
+
+      
+
+  <button class="btn btn-success" style="margin-left: 300px" (click)="createTrainings()">Insert</button>
+</form>
+</div>
+</body>

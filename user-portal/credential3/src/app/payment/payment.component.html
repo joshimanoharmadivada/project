@@ -1,0 +1,67 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+  #customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+  </style>
+  <body style="background-color: cornflowerblue;">
+<div class="col-md-6">
+<h2> User Details</h2>
+
+<table id="customers">
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Tax Type</th>
+    <th>Amount</th>
+    <th>Remarks</th>
+    <th>Mentor Id</th>
+    <th>Mentor Name</th>
+    <th>Training Id</th>
+    <th>Skill Name</th>
+    <th>Total Amount To Mentor</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.txnType}}</td>
+    <td>{{user.amount}}</td>
+    <td>{{user.remarks}}</td>
+    <td>{{user.mentorId}}</td>
+    <td>{{user.mentorName}}</td>
+    <td>{{user.triningId}}</td>
+    <td>{{user.skillName}}</td>
+    <td>{{user.totalAmountToMentor}}</td>
+   
+    <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete User</button></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</body>

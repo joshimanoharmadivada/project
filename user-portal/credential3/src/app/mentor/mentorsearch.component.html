@@ -1,0 +1,184 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <body style="height: 150px; padding-top: 20px; background: black">
+<div class="container" style="border-radius: 5px;border:1px solid black; height: wrap-content; background-color:#eee;">
+    <form class="navbar-form">
+      <div>
+        <h4 style="padding-left: 10px;">Select Your Mentor<span style="padding-left: 380px;"> Select the technologies</span></h4>
+        
+      </div>
+      <div class="container row">
+        <div class="input-group navbar-form col-lg-6" >
+            <select class="form-control" style="height: 34px;width: 100%;" [(ngModel)] = "selectedOption" name="user.userName" >
+                <option>--Select--</option>
+                <option *ngFor="let user of mentors;" style="width: 100%" name = "user.userName">{{user.userName}}</option>
+            </select>
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit" (click)="getByUserName()" >
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+              </div>
+        </div>
+        <div class="input-group navbar-form col-lg-6" style="margin-left: 400px;">
+            <select class="form-control" style="height: 34px;width:100%"  [(ngModel)] = "selectedOption1" name="technology.technologies">
+              <option>--Select--</option>  
+              <option *ngFor="let technology of technologies;">{{technology.technologies}}</option>
+              </select>
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit" (click)=getByTechnologies()>
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+        </div>
+      </div>
+    </form>
+</div>
+</body>
+<style>
+
+</style>
+
+
+<style>
+    .button {
+        display: block;
+        width: 150px;
+        height: 45px;
+        background: red;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    </style>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      </head>
+      <style>
+      #customers {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: black;
+      color: white;
+    }
+      </style>
+    <body >
+    
+    <table id="customers"  *ngIf="mentorsearchtrue">
+      <thead>
+      <tr>
+        <th>MentorId</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>ContactNumber</th>
+    
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of mentors1; let mentorId=index">
+        <td>{{user.mentorId}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.contactNumber}}</td>
+        <td><button (click)="subscribe1(user)" class="btn btn-danger">Subscribe</button></td>
+      </tr>
+      </tbody>
+    </table>
+    
+
+
+
+    <table id="customers" *ngIf="technologiestrue">
+        <thead>
+        <tr>
+          <th>Id</th>
+          <th>Technologies</th>
+          <th>Description</th>
+     
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of technologies1">
+          <td>{{user.id}}</td>
+          <td>{{user.technologies}}</td>
+          <td>{{user.description}}</td>
+          <td><button (click)="subscribe2(user)" class="btn btn-danger">Subscribe</button></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <table id="customers" *ngIf="trainingDetails">
+          <thead>
+          <tr>
+            <th>Training Id</th>
+            <th>Fees</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Technology</th>
+            <th>Description</th>
+
+       
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let training of trainings">
+            <td>{{training.id}}</td>
+            <td>{{training.fees}}</td>
+            <td>{{training.startDate}}</td>
+            <td>{{training.endDate}}</td>
+            <td>{{training.technologies.technologies}}</td>
+            <td>{{training.technologies.description}}</td>
+            <td><button class="btn btn-danger" (click)="view(training)">View</button></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table id="customers" *ngIf="technologiesDetails">
+            <thead>
+            <tr>
+              <th>Technology Id</th>
+              <th>Mentor Name</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Rating</th>
+              
+  
+         
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let training of trainings">
+              <td>{{training.technologies.id}}</td>
+              <td>{{training.mentor.firstName}}</td>
+              <td>{{training.startDate}}</td>
+              <td>{{training.endDate}}</td>
+              <td>{{training.rating}}</td>
+             
+              <td><button class="btn btn-danger">View</button></td>
+            </tr>
+            </tbody>
+          </table>
+    </body>
+    

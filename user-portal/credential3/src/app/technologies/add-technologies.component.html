@@ -1,0 +1,32 @@
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background-image: url('./assets/a1.jpg'); height: 656px; background-repeat: no-repeat; ">
+<div class="col-md-6" style="margin-left: 300px;">
+  <h2 class="text-center">Add Technologies Details</h2>
+<form>
+  <div class="form-group">
+    <label for="id">Technology Id</label>
+    <input type="text" [(ngModel)]="technologies.id" placeholder="Technology Id" name="id" class="form-control" id="id">
+  </div>
+
+  <div class="form-group">
+    <label for="technologies">Technology:</label>
+    <input [(ngModel)]="technologies.technologies" placeholder="Technology Name" name="technologies" class="form-control" id="technologies">
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <input [(ngModel)]="technologies.description" placeholder="Description" name="description" class="form-control" id="description">
+  </div>
+
+  
+  <button class="btn btn-default" style="align-content: center; margin-left: 300px;" (click)="createTechnologies()">Insert</button>
+</form>
+</div>
+</body>
